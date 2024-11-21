@@ -17,6 +17,7 @@ class Sizes{
   double get miniSize =>heightScreen / 30;
   double get tiniSize =>heightScreen / 70;
   double get medSize =>heightScreen / 16;
+  double get iconSize =>heightScreen / 20;
 
 
 

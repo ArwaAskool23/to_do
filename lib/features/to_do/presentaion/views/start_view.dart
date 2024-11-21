@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/features/to_do/presentaion/widgets/button_start.dart';
-import 'package:to_do/features/to_do/presentaion/widgets/content_widget.dart';
-import 'package:to_do/features/to_do/presentaion/widgets/title_widget.dart';
+import 'package:to_do/features/to_do/presentaion/widgets/start_widgets/button_start.dart';
+import 'package:to_do/features/to_do/presentaion/widgets/start_widgets/content_widget.dart';
+import 'package:to_do/features/to_do/presentaion/widgets/start_widgets/title_widget.dart';
 
 
 import '../../../../core/constatnts/fixed_assets.dart';

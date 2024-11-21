@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/colors.dart';
+import '../../../../../core/colors.dart';
 
 class ContentWidget extends StatelessWidget {
   const ContentWidget({super.key});
