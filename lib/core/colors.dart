@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class CustomColors {
   static const Color GreyBackground = Color.fromRGBO(249, 252, 255, 1);
   static const Color GreyBorder = Color.fromRGBO(207, 207, 207, 1);
+    static const Color GreyBorderOpecety = Color.fromRGBO(0, 0, 0, 0.197);
+
 
   static const Color GreenLight = Color.fromRGBO(93, 230, 26, 1);
   static const Color GreenDark = Color.fromRGBO(57, 170, 2, 1);

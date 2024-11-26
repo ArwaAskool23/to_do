@@ -24,14 +24,14 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(20),
           ),
           elevation: 6,
           shadowColor: CustomColors.TextWhite,
         ),
         onPressed: widget.onPress,
         child: Material(
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(20),
           shadowColor: CustomColors.GreyBorder,
           child: Container(
             width: sizes.buttonWidthSize,
@@ -52,7 +52,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                   CustomColors.GreenDark
                 ],
               ),
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(20),
             ),
             child: Center(
               child: Text(widget.text,textAlign: TextAlign.center,

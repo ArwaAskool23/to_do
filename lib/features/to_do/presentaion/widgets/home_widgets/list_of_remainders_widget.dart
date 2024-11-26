@@ -6,15 +6,33 @@ import '../../../../../core/colors.dart';
 import '../../../../../core/constatnts/fixed_assets.dart';
 import '../../../../../core/constatnts/size_constant.dart';
 
-class ListOfRemaindersWidget extends StatelessWidget {
+class ListOfRemaindersWidget extends StatefulWidget {
   final String day;
   final String name;
   final String time;
+  final void Function() onPress;
+  final void Function() doneTaskOnPress;
+  final void Function() notificationOnPress;
+  final void Function() taskOnPress;
+  final bool isCheck;
+  final bool checkNotification;
+  
   const ListOfRemaindersWidget({super.key,
     required this.day,
     required this.name,
-    required this.time});
+    required this.time, 
+    required this.onPress, 
+    this.isCheck = false, 
+    required this.doneTaskOnPress,
+    required this.notificationOnPress,
+    required this.checkNotification,
+    required this.taskOnPress});
 
+  @override
+  State<ListOfRemaindersWidget> createState() => _ListOfRemaindersWidgetState();
+}
+
+class _ListOfRemaindersWidgetState extends State<ListOfRemaindersWidget> {
   @override
   Widget build(BuildContext context) {
     Sizes sizes = Sizes(context);
@@ -34,7 +52,7 @@ class ListOfRemaindersWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(day,style: TextStyle(
+                    Text(widget.day,style: TextStyle(
                         color: CustomColors.TextSubHeader,
                         fontSize: sizes.subTitle,
                         fontWeight: FontWeight.w800
@@ -42,7 +60,6 @@ class ListOfRemaindersWidget extends StatelessWidget {
 
                     ListView.builder(
                         padding: EdgeInsets.zero,
-                        // controller: _controller,
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: 14,
@@ -52,7 +69,7 @@ class ListOfRemaindersWidget extends StatelessWidget {
                                 motion: const StretchMotion(),
                                 children: [
                                   
-                                  IconButton(onPressed: (){},
+                                  IconButton(onPressed: widget.onPress,
                                       icon: Container(
                                         alignment: Alignment.center,
 
@@ -66,14 +83,19 @@ class ListOfRemaindersWidget extends StatelessWidget {
                                             shape: BoxShape.circle,
                                                 image: DecorationImage(
                                                   image:  AssetImage(trash),
-                                                  // fit: BoxFit.contain,
                                                 )),
                                           ),
                                       ))
                                 ]),
                             child: RemainderWidget(
-                                time: time,
-                                name: name),
+                                time: widget.time,
+                                name: widget.name,
+                                isCheck: widget.isCheck, 
+                                doneTaskOnPress: widget.doneTaskOnPress,
+                                notificationOnPress: widget.notificationOnPress,
+                                checkNotification: widget.checkNotification,
+                                 taskOnPress: widget.taskOnPress,
+                                ),
                           );
                         }),
                   ],
