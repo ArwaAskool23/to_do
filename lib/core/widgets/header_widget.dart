@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/features/to_do/presentaion/widgets/home_widgets/profile_widget.dart';
-import 'package:to_do/features/to_do/presentaion/widgets/home_widgets/remainder_box_widget.dart';
+import 'package:to_do/core/widgets/header_widgets/profile_widget.dart';
+import 'package:to_do/core/widgets/header_widgets/remainder_box_widget.dart';
 
 import '../colors.dart';
 import '../constatnts/size_constant.dart';

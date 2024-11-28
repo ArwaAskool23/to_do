@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/core/colors.dart';
+import 'package:to_do/core/constatnts/size_constant.dart';
 
-import '../../../../../core/constatnts/fixed_assets.dart';
 
 class IconButtonBarWidget extends StatefulWidget {
   final String name;
   final String icon;
   final void Function()? onPress;
+  final Color color;
   const IconButtonBarWidget({super.key,
    this.onPress, 
    required this.name, 
-   required this.icon});
+   required this.icon, 
+   required this.color});
 
   @override
   State<IconButtonBarWidget> createState() => _IconButtonBarWidgetState();
@@ -19,13 +20,19 @@ class IconButtonBarWidget extends StatefulWidget {
 class _IconButtonBarWidgetState extends State<IconButtonBarWidget> {
   @override
   Widget build(BuildContext context) {
+      Sizes sizes = Sizes(context);
     return IconButton(
-      icon: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ImageIcon(AssetImage(widget.icon)),
-          Text(widget.name, style: const TextStyle(color: CustomColors.TextSubHeaderGrey),)
-        ],
+      icon: Container(
+        padding: EdgeInsets.symmetric(horizontal: sizes.tiniSpace),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ImageIcon(AssetImage(widget.icon),
+            color: widget.color,
+            ),
+            Text(widget.name, style: TextStyle(color: widget.color),)
+          ],
+        ),
       ),
       onPressed: widget.onPress,
     );

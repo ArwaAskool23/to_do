@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/colors.dart';
-import '../../../../../core/constatnts/fixed_assets.dart';
-import '../../../../../core/constatnts/size_constant.dart';
+import '../../colors.dart';
+import '../../constatnts/fixed_assets.dart';
+import '../../constatnts/size_constant.dart';
 
 class RemainderBoxWidget extends StatelessWidget {
   final String nameOfTask;

@@ -1,17 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NotificationPro extends StateNotifier<bool> {
+class NotificationPro extends StateNotifier<List<List<bool>>> {
 
 
-NotificationPro() : super(false);
+
+NotificationPro() : super(List.generate(3, (index) => List.generate(4, (index) => false)));
 
 
- void toggleValue() {
-    state = !state; 
+ void toggleValue(int indexDay, int indexTask) {
+    state[indexDay][indexTask] = !state[indexDay][indexTask]; 
   }
   }
 
-final notificationProvider = StateNotifierProvider<NotificationPro, bool>((ref) {
+final notificationProvider = StateNotifierProvider<NotificationPro, List<List<bool>>>((ref) {
   return NotificationPro(); 
 });

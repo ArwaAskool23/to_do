@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/colors.dart';
-import '../../../../../core/constatnts/size_constant.dart';
+import '../colors.dart';
+import '../constatnts/size_constant.dart';
 
 Future dialog({
   required BuildContext context,

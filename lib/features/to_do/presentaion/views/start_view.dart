@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/features/to_do/presentaion/views/home_view.dart';
+import 'package:to_do/core/constatnts/screen_routes.dart';
 import 'package:to_do/features/to_do/presentaion/widgets/start_widgets/button_start.dart';
 import 'package:to_do/features/to_do/presentaion/widgets/start_widgets/content_widget.dart';
 import 'package:to_do/features/to_do/presentaion/widgets/start_widgets/title_widget.dart';
@@ -32,8 +32,7 @@ class _StartViewState extends State<StartView> {
               const TitleWidget(),
               const ContentWidget(),
               buttonStart(onPress: (){
-                Navigator.push(context,
-                 MaterialPageRoute(builder: (context) => HomeView()),);
+                Navigator.pushNamed(context, homeRoute);
               })
             ],
           ),
